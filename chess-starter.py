@@ -16,7 +16,7 @@ async def main() -> None:
 
     board = chess.Board()
     while not board.is_game_over():
-        result = await engine.play(board, chess.engine.Limit(time=0.05))
+        result = await engine.play(board, chess.engine.Limit(time=0.5))
         print(result.move)
         board.push(result.move)
         svg = chess.svg.board(board, size=350)
